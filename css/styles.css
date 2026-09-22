@@ -1,9 +1,9 @@
 :root {
-  --background: oklch(0.82 0.04 78);
-  --card: oklch(0.9 0.028 82);
-  --secondary: oklch(0.78 0.035 72);
-  --muted: oklch(0.84 0.03 76);
-  --border: oklch(0.7 0.03 68);
+  --background: oklch(0.96 0.016 85);
+  --card: oklch(0.98 0.01 84);
+  --secondary: oklch(0.9 0.02 78);
+  --muted: oklch(0.93 0.014 82);
+  --border: oklch(0.84 0.02 75);
   --primary: oklch(0.66 0.13 28);
   --accent: oklch(0.69 0.11 32);
   --foreground: oklch(0.28 0.02 55);
@@ -45,17 +45,6 @@ body::before {
   background-image: url("../images/paper.png");
   background-size: cover;
   background-position: center;
-  opacity: 0.88;
-  filter: contrast(1.12) saturate(0.95) brightness(0.96);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: oklch(0.55 0.04 70 / 0.1);
 }
 
 img {
@@ -181,8 +170,8 @@ p {
   left: 0;
   right: 0;
   z-index: 50;
-  background: color-mix(in oklch, var(--background) 72%, transparent);
-  border-bottom: 1px solid oklch(0.35 0.03 55 / 0.12);
+  background: color-mix(in oklch, var(--background) 78%, transparent);
+  border-bottom: 1px solid oklch(0.45 0.02 70 / 0.1);
 }
 
 .nav-inner {
@@ -432,12 +421,22 @@ p {
   width: min(100%, 34rem);
   margin: 0 auto 1rem;
   color: var(--ink);
-  opacity: 0.42;
   pointer-events: none;
+  animation: frame-in 0.8s ease-out both;
 }
 
 .hero-frame-bottom {
   margin: 0.75rem auto 1.5rem;
+  animation-delay: 180ms;
+}
+
+@keyframes frame-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.45;
+  }
 }
 
 .hero-frame-svg {
@@ -1123,8 +1122,13 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .hero-drop,
+  .hero-frame,
   .gear-xs,
   .gear-xs-slow {
     animation: none;
+  }
+
+  .hero-frame {
+    opacity: 0.45;
   }
 }
