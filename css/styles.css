@@ -1,9 +1,9 @@
 :root {
-  --background: oklch(0.96 0.015 80);
-  --card: oklch(0.98 0.01 84);
-  --secondary: oklch(0.9 0.02 78);
-  --muted: oklch(0.93 0.014 82);
-  --border: oklch(0.84 0.02 75);
+  --background: oklch(0.95 0.038 92);
+  --card: oklch(0.98 0.022 90);
+  --secondary: oklch(0.9 0.032 86);
+  --muted: oklch(0.93 0.028 88);
+  --border: oklch(0.84 0.03 82);
   --primary: oklch(0.66 0.13 28);
   --accent: oklch(0.69 0.11 32);
   --foreground: oklch(0.28 0.02 55);
@@ -414,10 +414,10 @@ p {
   position: absolute;
   left: 50%;
   top: 38%;
-  width: min(22rem, 88vw);
+  width: min(20rem, 84vw);
   transform: translate(-50%, -55%);
   z-index: 0;
-  opacity: 0.16;
+  opacity: 0.14;
   pointer-events: none;
   color: var(--ink);
 }
@@ -441,24 +441,13 @@ p {
 }
 
 .under-spin-slow {
-  animation: spin-cw 56s linear infinite;
+  animation: spin-cw 72s linear infinite;
   transform-origin: 210px 210px;
-}
-
-.under-spin-rev {
-  animation: spin-ccw 40s linear infinite;
-  transform-origin: 0 0;
 }
 
 @keyframes spin-cw {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-ccw {
-  to {
-    transform: rotate(-360deg);
   }
 }
 
@@ -505,8 +494,8 @@ p {
 
   .hero-underlay {
     left: 38%;
-    width: 26rem;
-    opacity: 0.18;
+    width: 24rem;
+    opacity: 0.15;
   }
 
   .hero-stage-slot {
@@ -1104,8 +1093,7 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .hero-drop,
-  .under-spin-slow,
-  .under-spin-rev {
+  .under-spin-slow {
     animation: none;
   }
 }
