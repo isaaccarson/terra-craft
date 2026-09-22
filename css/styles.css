@@ -430,7 +430,8 @@ p {
 }
 
 .hero-copy,
-.hero-cta {
+.hero-cta,
+.hero-title-cluster {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -438,15 +439,21 @@ p {
   max-width: 100%;
 }
 
+.hero-copy {
+  align-items: center;
+  gap: 0;
+}
+
 .hero-copy .hero-kicker,
 .hero-copy .hero-sub {
-  width: 0;
-  min-width: 100%;
+  width: auto;
+  max-width: 20.5rem;
 }
 
 .hero-ornament {
-  width: 100%;
-  color: var(--ink);
+  width: 0;
+  min-width: 100%;
+  color: oklch(0.24 0.03 48);
   pointer-events: none;
   animation: ornament-in 0.9s ease-out both;
 }
@@ -466,7 +473,7 @@ p {
     transform: translateY(-0.35rem);
   }
   to {
-    opacity: 0.72;
+    opacity: 0.9;
     transform: none;
   }
 }
@@ -474,12 +481,12 @@ p {
 .hero-ornament-svg {
   display: block;
   width: 100%;
-  height: 3.35rem;
+  height: 4.35rem;
   overflow: visible;
 }
 
 .hero-ornament-bottom .hero-ornament-svg {
-  height: 2.85rem;
+  height: 3.55rem;
 }
 
 .hero-ornament-svg path,
@@ -489,17 +496,17 @@ p {
 }
 
 .hero-ornament-svg .orn-rule {
-  stroke-width: 1.55;
+  stroke-width: 2;
   stroke-linecap: square;
 }
 
 .hero-ornament-svg .orn-tick {
-  stroke-width: 1.25;
+  stroke-width: 1.45;
   stroke-linecap: square;
 }
 
 .hero-ornament-svg .orn-bracket {
-  stroke-width: 1.7;
+  stroke-width: 2.15;
   stroke-linecap: square;
   stroke-linejoin: miter;
 }
@@ -507,30 +514,30 @@ p {
 .hero-ornament-svg .orn-plus,
 .hero-ornament-svg .orn-arc,
 .hero-ornament-svg .orn-spring {
-  stroke-width: 1.2;
+  stroke-width: 1.45;
   stroke-linecap: round;
 }
 
 .hero-ornament-svg .orn-gear,
 .hero-ornament-svg .orn-hex {
-  stroke-width: 1.7;
-  fill: color-mix(in oklch, var(--ink) 10%, transparent);
+  stroke-width: 2.05;
+  fill: color-mix(in oklch, currentColor 16%, transparent);
 }
 
 .hero-ornament-svg .orn-gear-lg {
-  stroke-width: 1.85;
-  fill: color-mix(in oklch, var(--ink) 14%, transparent);
+  stroke-width: 2.2;
+  fill: color-mix(in oklch, currentColor 20%, transparent);
 }
 
 .hero-ornament-svg .orn-hub {
-  stroke-width: 1.55;
-  fill: color-mix(in oklch, var(--ink) 8%, transparent);
+  stroke-width: 1.8;
+  fill: color-mix(in oklch, currentColor 12%, transparent);
 }
 
 .hero-ornament-svg .orn-hub-inner,
 .hero-ornament-svg .orn-dot {
-  stroke-width: 1.3;
-  fill: color-mix(in oklch, var(--ink) 22%, transparent);
+  stroke-width: 1.5;
+  fill: color-mix(in oklch, currentColor 28%, transparent);
 }
 
 .orn-draw {
@@ -612,7 +619,7 @@ p {
   }
 
   .hero-stage {
-    grid-template-columns: minmax(18rem, 0.95fr) minmax(20rem, 1.05fr);
+    grid-template-columns: minmax(22rem, 1.15fr) minmax(16rem, 0.85fr);
     gap: 2rem;
   }
 
@@ -622,8 +629,12 @@ p {
     max-width: none;
   }
 
+  .hero-copy {
+    align-items: flex-start;
+  }
+
   .hero-stage .hero-content h1 {
-    font-size: clamp(2.6rem, 4.6vw, 3.9rem);
+    font-size: clamp(2.35rem, 3.4vw, 3.25rem);
   }
 
   .hero-stage .hero-content .actions {
@@ -641,15 +652,21 @@ p {
   }
 
   .hero-ornament-svg {
-    height: 3.6rem;
+    height: 4.85rem;
   }
 
   .hero-ornament-bottom .hero-ornament-svg {
-    height: 3.05rem;
+    height: 3.85rem;
   }
 
   .hero-stage-slot {
     display: block;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero-stage .hero-content h1 {
+    white-space: nowrap;
   }
 }
 
@@ -667,8 +684,19 @@ p {
 }
 
 .hero-copy .hero-sub {
-  max-width: none;
   margin: 0;
+}
+
+@media (min-width: 960px) {
+  .hero-kicker {
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    margin-top: 1.15rem;
+  }
+
+  .hero-copy .hero-kicker,
+  .hero-copy .hero-sub {
+    max-width: min(30rem, 100%);
+  }
 }
 
 .hero-cta .actions .btn {
@@ -677,6 +705,11 @@ p {
 }
 
 @media (max-width: 639px) {
+  .hero {
+    overflow: visible;
+    padding-bottom: 3.25rem;
+  }
+
   .hero-cta {
     width: min(100%, 18.5rem);
   }
@@ -688,6 +721,10 @@ p {
 
   .hero-ornament-bottom {
     margin: 1.55rem 0 1.1rem;
+  }
+
+  .scroll-hint {
+    display: none;
   }
 }
 
@@ -1270,7 +1307,7 @@ p {
   }
 
   .hero-ornament {
-    opacity: 0.72;
+    opacity: 0.9;
   }
 
   .orn-draw {
