@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Isaac Carson</title>
+    <meta
+      name="description"
+      content="Get in touch about custom guitars, fabrication projects, or opportunities."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav" aria-label="Main">
+        <div class="nav-inner">
+          <a class="nav-logo" href="index.html">Isaac Carson</a>
+          <div class="nav-links">
+            <a href="guitar-shop.html">Guitar Shop</a>
+            <a href="projects.html">Projects</a>
+            <a href="photography.html">Photography</a>
+            <a href="resume.html">Resume</a>
+            <a class="nav-cta" href="contact.html">Contact</a>
+          </div>
+          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="nav-mobile">
+          <a href="guitar-shop.html">Guitar Shop</a>
+          <a href="projects.html">Projects</a>
+          <a href="photography.html">Photography</a>
+          <a href="resume.html">Resume</a>
+          <a class="nav-cta" href="contact.html">Contact</a>
+        </div>
+      </nav>
+
+      <section class="section section-intro">
+        <div class="container-narrow center">
+          <div class="reveal">
+            <h1>Let's Connect</h1>
+            <p class="lead" style="margin: 1.5rem auto 0">
+              Whether you're interested in a custom guitar, have a fabrication project in mind, or
+              want to discuss opportunities, I'd love to hear from you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container form-grid">
+          <div class="reveal">
+            <form id="contact-form" class="card padded-card">
+              <h2 style="margin-bottom: 1.5rem">Send a Message</h2>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              <div class="field">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="guitar">Custom Guitar Commission</option>
+                  <option value="fabrication">Fabrication Project</option>
+                  <option value="employment">Employment Opportunity</option>
+                  <option value="collaboration">Collaboration</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell me about your project or inquiry..."
+                ></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg" type="submit" style="width: 100%">
+                Send Message
+              </button>
+              <p id="form-status" class="form-status" role="status"></p>
+            </form>
+          </div>
+
+          <div class="stack">
+            <article class="reveal card padded-card" data-delay="100">
+              <h2 style="margin-bottom: 1.5rem">Contact Information</h2>
+              <div class="info-block">
+                <h3>Location</h3>
+                <p>Pittsburgh, PA</p>
+              </div>
+              <div class="info-block">
+                <h3>Email</h3>
+                <a href="mailto:isaac@example.com">isaac@example.com</a>
+              </div>
+            </article>
+            <article class="reveal card padded-card" data-delay="200">
+              <h2 style="margin-bottom: 1.5rem">Project Inquiries</h2>
+              <p class="muted">
+                <strong>Guitar Commissions:</strong> Custom builds are currently available. Lead time
+                varies by project complexity.
+              </p>
+              <p class="muted" style="margin-top: 1rem">
+                <strong>Fabrication Projects:</strong> Taking on select custom fabrication and design
+                projects.
+              </p>
+              <p class="muted" style="margin-top: 1rem">
+                <strong>Collaborations:</strong> Open to interesting projects that combine
+                engineering, design, and craftsmanship.
+              </p>
+            </article>
+            <article class="reveal card padded-card" data-delay="300">
+              <h2 style="margin-bottom: 1rem">Response Time</h2>
+              <p class="muted">
+                I typically respond to inquiries within 24-48 hours. For urgent matters, please
+                indicate so in your message subject.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container-narrow center">
+          <div class="reveal">
+            <h2 style="margin-bottom: 2rem">Explore My Work</h2>
+            <div class="actions">
+              <a class="btn btn-outline" href="projects.html">View Projects</a>
+              <a class="btn btn-outline" href="guitar-shop.html">Guitar Shop</a>
+              <a class="btn btn-outline" href="resume.html">Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-simple">
+          <p>© 2026 Isaac Carson. All rights reserved.</p>
+          <a class="footer-back" href="index.html">Back to Home</a>
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
