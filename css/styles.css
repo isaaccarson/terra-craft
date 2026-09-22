@@ -1,5 +1,5 @@
 :root {
-  --background: oklch(0.96 0.016 85);
+  --background: oklch(0.96 0.015 80);
   --card: oklch(0.98 0.01 84);
   --secondary: oklch(0.9 0.02 78);
   --muted: oklch(0.93 0.014 82);
@@ -30,21 +30,10 @@ html {
 body {
   min-height: 100vh;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--background);
+  background: var(--background);
   color: var(--foreground);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: url("../images/paper.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 img {
@@ -421,139 +410,29 @@ p {
   margin-top: 1.5rem;
 }
 
-.hero-stage .hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  max-width: 100%;
-}
-
-.hero-copy,
-.hero-cta,
-.hero-title-cluster {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: fit-content;
-  max-width: 100%;
-}
-
-.hero-copy {
-  align-items: center;
-  gap: 0;
-}
-
-.hero-copy .hero-kicker,
-.hero-copy .hero-sub {
-  width: auto;
-  max-width: 20.5rem;
-}
-
-.hero-ornament {
-  width: 0;
-  min-width: 100%;
-  color: oklch(0.24 0.03 48);
+.hero-underlay {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: min(22rem, 88vw);
+  transform: translate(-50%, -55%);
+  z-index: 0;
+  opacity: 0.16;
   pointer-events: none;
-  animation: ornament-in 0.9s ease-out both;
+  color: var(--ink);
 }
 
-.hero-ornament-top {
-  margin: 0 0 0.7rem;
-}
-
-.hero-ornament-bottom {
-  margin: 1.35rem 0 0.95rem;
-  animation-delay: 160ms;
-}
-
-@keyframes ornament-in {
-  from {
-    opacity: 0;
-    transform: translateY(-0.35rem);
-  }
-  to {
-    opacity: 0.9;
-    transform: none;
-  }
-}
-
-.hero-ornament-svg {
+.hero-underlay-svg {
   display: block;
   width: 100%;
-  height: 4.35rem;
-  overflow: visible;
+  height: auto;
 }
 
-.hero-ornament-bottom .hero-ornament-svg {
-  height: 3.55rem;
-}
-
-.hero-ornament-svg path,
-.hero-ornament-svg circle {
+.hero-underlay-svg path,
+.hero-underlay-svg circle {
   stroke: currentColor;
   fill: none;
-}
-
-.hero-ornament-svg .orn-rule {
-  stroke-width: 2;
-  stroke-linecap: square;
-}
-
-.hero-ornament-svg .orn-tick {
-  stroke-width: 1.45;
-  stroke-linecap: square;
-}
-
-.hero-ornament-svg .orn-bracket {
-  stroke-width: 2.15;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-}
-
-.hero-ornament-svg .orn-plus,
-.hero-ornament-svg .orn-arc,
-.hero-ornament-svg .orn-spring {
-  stroke-width: 1.45;
-  stroke-linecap: round;
-}
-
-.hero-ornament-svg .orn-gear,
-.hero-ornament-svg .orn-hex {
-  stroke-width: 2.05;
-  fill: color-mix(in oklch, currentColor 16%, transparent);
-}
-
-.hero-ornament-svg .orn-gear-lg {
-  stroke-width: 2.2;
-  fill: color-mix(in oklch, currentColor 20%, transparent);
-}
-
-.hero-ornament-svg .orn-hub {
-  stroke-width: 1.8;
-  fill: color-mix(in oklch, currentColor 12%, transparent);
-}
-
-.hero-ornament-svg .orn-hub-inner,
-.hero-ornament-svg .orn-dot {
-  stroke-width: 1.5;
-  fill: color-mix(in oklch, currentColor 28%, transparent);
-}
-
-.orn-draw {
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
-  animation: rule-draw 1.1s ease-out 0.15s forwards;
-}
-
-.hero-ornament-bottom .orn-draw {
-  animation-delay: 0.28s;
-}
-
-@keyframes rule-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
+  stroke-width: 1.15;
 }
 
 .hero-stage-slot {
@@ -561,26 +440,14 @@ p {
   min-height: 18rem;
 }
 
-.gear-spin,
-.gear-wobble {
-  transform-box: fill-box;
-  transform-origin: center;
+.under-spin-slow {
+  animation: spin-cw 56s linear infinite;
+  transform-origin: 210px 210px;
 }
 
-.gear-cw {
-  animation: spin-cw 16s linear infinite;
-}
-
-.gear-ccw {
-  animation: spin-ccw 21s linear infinite;
-}
-
-.gear-cw-fast {
-  animation: spin-cw 11s linear infinite;
-}
-
-.gear-wobble {
-  animation: hex-wobble 5.5s ease-in-out infinite;
+.under-spin-rev {
+  animation: spin-ccw 40s linear infinite;
+  transform-origin: 0 0;
 }
 
 @keyframes spin-cw {
@@ -592,16 +459,6 @@ p {
 @keyframes spin-ccw {
   to {
     transform: rotate(-360deg);
-  }
-}
-
-@keyframes hex-wobble {
-  0%,
-  100% {
-    transform: rotate(-12deg);
-  }
-  50% {
-    transform: rotate(12deg);
   }
 }
 
@@ -619,30 +476,25 @@ p {
   }
 
   .hero-stage {
-    grid-template-columns: minmax(22rem, 1.15fr) minmax(16rem, 0.85fr);
+    grid-template-columns: minmax(18rem, 0.95fr) minmax(20rem, 1.05fr);
     gap: 2rem;
   }
 
-  .hero-stage .hero-content {
+  .hero-content {
     text-align: left;
-    align-items: flex-start;
-    max-width: none;
+    max-width: 36rem;
   }
 
-  .hero-copy {
-    align-items: flex-start;
+  .hero-content h1 {
+    font-size: clamp(2.6rem, 4.6vw, 3.9rem);
   }
 
-  .hero-stage .hero-content h1 {
-    font-size: clamp(2.35rem, 3.4vw, 3.25rem);
-  }
-
-  .hero-stage .hero-content .actions {
+  .hero-content .actions {
     justify-content: flex-start;
     align-items: flex-start;
   }
 
-  .hero-stage .hero-content .actions .btn {
+  .hero-content .actions .btn {
     width: auto;
   }
 
@@ -651,12 +503,10 @@ p {
     margin-right: 0;
   }
 
-  .hero-ornament-svg {
-    height: 4.85rem;
-  }
-
-  .hero-ornament-bottom .hero-ornament-svg {
-    height: 3.85rem;
+  .hero-underlay {
+    left: 38%;
+    width: 26rem;
+    opacity: 0.18;
   }
 
   .hero-stage-slot {
@@ -664,68 +514,17 @@ p {
   }
 }
 
-@media (min-width: 1100px) {
-  .hero-stage .hero-content h1 {
-    white-space: nowrap;
-  }
-}
-
 .hero-kicker {
   font-size: clamp(1.25rem, 3vw, 1.875rem);
   font-weight: 500;
-  margin: 1.35rem 0 0.7rem;
+  margin: 1.5rem 0 0.75rem;
 }
 
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--muted-foreground);
   max-width: 36rem;
-  margin: 0 auto;
-}
-
-.hero-copy .hero-sub {
-  margin: 0;
-}
-
-@media (min-width: 960px) {
-  .hero-kicker {
-    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
-    margin-top: 1.15rem;
-  }
-
-  .hero-copy .hero-kicker,
-  .hero-copy .hero-sub {
-    max-width: min(30rem, 100%);
-  }
-}
-
-.hero-cta .actions .btn {
-  width: auto;
-  min-width: 12.75rem;
-}
-
-@media (max-width: 639px) {
-  .hero {
-    overflow: visible;
-    padding-bottom: 3.25rem;
-  }
-
-  .hero-cta {
-    width: min(100%, 18.5rem);
-  }
-
-  .hero-cta .actions .btn {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .hero-ornament-bottom {
-    margin: 1.55rem 0 1.1rem;
-  }
-
-  .scroll-hint {
-    display: none;
-  }
+  margin: 0 auto 3rem;
 }
 
 .hero-drop {
@@ -1297,20 +1096,8 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .hero-drop,
-  .hero-ornament,
-  .gear-cw,
-  .gear-ccw,
-  .gear-cw-fast,
-  .gear-wobble,
-  .orn-draw {
+  .under-spin-slow,
+  .under-spin-rev {
     animation: none;
-  }
-
-  .hero-ornament {
-    opacity: 0.9;
-  }
-
-  .orn-draw {
-    stroke-dashoffset: 0;
   }
 }

@@ -33,7 +33,9 @@ jobs:
           cp *.html .nojekyll _site/
           cp css/* _site/css/
           cp js/* _site/js/
-          cp images/* _site/images/
+          if [ -n "$(ls -A images 2>/dev/null)" ]; then
+            cp images/* _site/images/
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
