@@ -1,14 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.querySelector(".nav");
   const toggle = document.querySelector(".nav-toggle");
   const mobile = document.querySelector(".nav-mobile");
-
-  const onScroll = () => {
-    nav?.classList.toggle("is-scrolled", window.scrollY > 20);
-  };
-
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
 
   toggle?.addEventListener("click", () => {
     const open = !mobile.classList.contains("is-open");
