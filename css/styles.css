@@ -514,6 +514,14 @@ p {
   }
 }
 
+@media (max-width: 639px) {
+  .hero-underlay {
+    width: min(17.5rem, 76vw);
+    top: 30%;
+    transform: translate(-50%, -62%);
+  }
+}
+
 .hero-kicker {
   font-size: clamp(1.25rem, 3vw, 1.875rem);
   font-weight: 500;
