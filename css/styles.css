@@ -417,6 +417,7 @@ p {
   width: min(19rem, 80vw);
   transform: translate(-50%, -58%);
   z-index: 0;
+  opacity: 0.28;
   pointer-events: none;
 }
 
@@ -432,8 +433,9 @@ p {
 }
 
 .hero-poly {
-  fill: color-mix(in oklch, var(--primary) 16%, var(--background));
-  stroke: none;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
 }
 
 .hero-stage-slot {
