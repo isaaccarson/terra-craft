@@ -413,26 +413,27 @@ p {
 .hero-underlay {
   position: absolute;
   left: 50%;
-  top: 38%;
-  width: min(20rem, 84vw);
-  transform: translate(-50%, -55%);
+  top: 36%;
+  width: min(19rem, 80vw);
+  transform: translate(-50%, -58%);
   z-index: 0;
-  opacity: 0.14;
   pointer-events: none;
-  color: var(--ink);
 }
 
-.hero-underlay-svg {
+.hero-poly-bounce {
+  animation: poly-bounce 6.5s ease-in-out infinite;
+}
+
+.hero-poly-spin {
   display: block;
   width: 100%;
   height: auto;
+  animation: poly-spin 28s linear infinite;
 }
 
-.hero-underlay-svg path,
-.hero-underlay-svg circle {
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.15;
+.hero-poly {
+  fill: color-mix(in oklch, var(--primary) 16%, var(--background));
+  stroke: none;
 }
 
 .hero-stage-slot {
@@ -440,12 +441,17 @@ p {
   min-height: 18rem;
 }
 
-.under-spin-slow {
-  animation: spin-cw 72s linear infinite;
-  transform-origin: 210px 210px;
+@keyframes poly-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.85rem);
+  }
 }
 
-@keyframes spin-cw {
+@keyframes poly-spin {
   to {
     transform: rotate(360deg);
   }
@@ -493,9 +499,8 @@ p {
   }
 
   .hero-underlay {
-    left: 38%;
-    width: 24rem;
-    opacity: 0.15;
+    left: 40%;
+    width: 22rem;
   }
 
   .hero-stage-slot {
@@ -1093,7 +1098,8 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .hero-drop,
-  .under-spin-slow {
+  .hero-poly-bounce,
+  .hero-poly-spin {
     animation: none;
   }
 }

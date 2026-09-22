@@ -47,12 +47,14 @@
         <div class="hero-stage">
           <div class="hero-content">
             <div class="hero-underlay" aria-hidden="true">
-              <svg class="hero-underlay-svg" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="210" cy="210" r="140" />
-                <g class="under-spin-slow">
-                  <path d="M210 70 L331.2 280 L88.8 280 Z" />
-                </g>
-              </svg>
+              <div class="hero-poly-bounce">
+                <svg class="hero-poly-spin" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+                  <polygon
+                    class="hero-poly"
+                    points="210,58 341,134 341,286 210,362 79,286 79,134"
+                  />
+                </svg>
+              </div>
             </div>
             <h1 class="hero-drop">Design.<br />Build. Create.</h1>
             <p class="hero-kicker hero-drop" style="--delay: 90ms">Mechanical Engineering + Craftsmanship</p>
