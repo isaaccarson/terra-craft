@@ -1,17 +1,16 @@
 :root {
-  --background: oklch(0.91 0.038 80);
-  --card: oklch(0.96 0.02 84);
-  --secondary: oklch(0.85 0.03 72);
-  --muted: oklch(0.89 0.025 78);
-  --border: oklch(0.78 0.03 70);
+  --background: oklch(0.96 0.015 80);
+  --card: oklch(0.98 0.012 82);
+  --secondary: oklch(0.85 0.018 70);
+  --muted: oklch(0.9 0.015 75);
+  --border: oklch(0.87 0.012 72);
   --primary: oklch(0.62 0.1 45);
   --accent: oklch(0.65 0.09 48);
-  --foreground: oklch(0.28 0.02 55);
-  --card-foreground: oklch(0.28 0.02 55);
+  --foreground: oklch(0.28 0.015 60);
+  --card-foreground: oklch(0.28 0.015 60);
   --primary-foreground: oklch(0.99 0.005 80);
   --secondary-foreground: oklch(0.28 0.015 60);
-  --muted-foreground: oklch(0.42 0.03 55);
-  --ink: oklch(0.36 0.035 50);
+  --muted-foreground: oklch(0.48 0.02 60);
   --radius: 0.5rem;
 }
 
@@ -30,60 +29,10 @@ html {
 body {
   min-height: 100vh;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--background);
-  background-image:
-    radial-gradient(ellipse 90% 70% at 12% 8%, oklch(0.86 0.055 75 / 0.55), transparent 52%),
-    radial-gradient(ellipse 70% 55% at 92% 88%, oklch(0.76 0.06 50 / 0.4), transparent 48%),
-    radial-gradient(circle at 78% 22%, oklch(0.7 0.07 48 / 0.2), transparent 18%),
-    radial-gradient(circle at 16% 80%, oklch(0.74 0.05 70 / 0.18), transparent 16%),
-    radial-gradient(circle at 40% 36%, oklch(0.68 0.06 45 / 0.1), transparent 12%),
-    radial-gradient(circle at 62% 70%, oklch(0.72 0.04 85 / 0.12), transparent 14%),
-    radial-gradient(circle at 48% 46%, oklch(0.9 0.02 85 / 0.16), transparent 40%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      oklch(0.4 0.03 55 / 0.025) 2px,
-      oklch(0.4 0.03 55 / 0.025) 3px
-    ),
-    linear-gradient(oklch(0.4 0.03 55 / 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(0.4 0.03 55 / 0.045) 1px, transparent 1px);
-  background-size:
-    auto,
-    auto,
-    auto,
-    auto,
-    auto,
-    auto,
-    auto,
-    100% 100%,
-    26px 26px,
-    26px 26px;
+  background: var(--background);
   color: var(--foreground);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  box-shadow:
-    inset 0 0 140px 28px oklch(0.52 0.05 55 / 0.16),
-    inset 0 0 40px 8px oklch(0.45 0.04 50 / 0.08);
 }
 
 img {
@@ -130,8 +79,6 @@ p {
 }
 
 .page {
-  position: relative;
-  z-index: 1;
   min-height: 100vh;
 }
 
@@ -164,16 +111,21 @@ p {
 }
 
 .section-alt {
-  background: oklch(0.45 0.03 60 / 0.05);
+  background: color-mix(in oklch, var(--secondary) 30%, transparent);
 }
 
 .section-soft {
-  background: oklch(0.62 0.1 45 / 0.04);
+  background: color-mix(in oklch, var(--primary) 5%, transparent);
 }
 
 .section-intro {
   padding-top: 6rem;
-  background: oklch(0.4 0.03 55 / 0.03);
+  background: linear-gradient(
+    135deg,
+    var(--background),
+    color-mix(in oklch, var(--secondary) 20%, transparent),
+    color-mix(in oklch, var(--accent) 10%, transparent)
+  );
 }
 
 @media (min-width: 640px) {
@@ -213,9 +165,9 @@ p {
 }
 
 .nav.is-scrolled {
-  background: color-mix(in oklch, var(--background) 78%, transparent);
+  background: color-mix(in oklch, var(--background) 80%, transparent);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-inner {
@@ -450,177 +402,46 @@ p {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
-    oklch(0.93 0.03 82 / 0.2),
-    transparent 55%
+    135deg,
+    color-mix(in oklch, var(--secondary) 30%, transparent),
+    transparent,
+    color-mix(in oklch, var(--secondary) 20%, transparent)
   );
 }
 
-.hero-stage {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 80rem;
-  display: grid;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.hero-drawing {
+.hero-model {
   position: absolute;
-  right: -8%;
-  top: 16%;
-  z-index: 1;
-  width: min(92vw, 30rem);
-  opacity: 0.16;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
   pointer-events: none;
-  color: var(--ink);
 }
 
-.workshop-svg {
-  display: block;
-  width: 100%;
+.hero-model svg {
+  width: min(100%, 42rem);
   height: auto;
+  max-height: 24rem;
+  animation: spin 20s linear infinite;
 }
 
-.workshop-svg .draw-frame,
-.workshop-svg .title-block,
-.workshop-svg .gear path,
-.workshop-svg .gear circle,
-.workshop-svg .draw-caliper path,
-.workshop-svg .draw-caliper circle {
-  stroke: currentColor;
-  fill: none;
-}
-
-.workshop-svg .draw-frame,
-.workshop-svg .title-block {
-  stroke-width: 1.1;
-}
-
-.workshop-svg .gear path,
-.workshop-svg .gear circle,
-.workshop-svg .draw-caliper path,
-.workshop-svg .draw-caliper circle {
-  stroke-width: 1.25;
-}
-
-.workshop-svg .draw-tick,
-.workshop-svg .draw-center,
-.workshop-svg .draw-dim {
-  stroke: currentColor;
-  stroke-width: 0.7;
-  opacity: 0.45;
-}
-
-.workshop-svg .draw-center {
-  stroke-dasharray: 4 6;
-}
-
-.workshop-svg .draw-note,
-.workshop-svg .draw-label {
-  fill: currentColor;
-  font-family: "Courier New", ui-monospace, monospace;
-  letter-spacing: 0.04em;
-}
-
-.workshop-svg .draw-note {
-  font-size: 11px;
-  opacity: 0.7;
-}
-
-.workshop-svg .draw-label {
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.gear-lg {
-  animation: spin-cw 36s linear infinite;
-  transform-origin: 0 0;
-}
-
-.gear-md {
-  animation: spin-ccw 27s linear infinite;
-  transform-origin: 0 0;
-}
-
-.gear-sm {
-  animation: spin-ccw 18s linear infinite;
-  transform-origin: 0 0;
-}
-
-.gear-xs {
-  animation: spin-cw 13.5s linear infinite;
-  transform-origin: 0 0;
-}
-
-@keyframes spin-cw {
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes spin-ccw {
-  to {
-    transform: rotate(-360deg);
-  }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 64rem;
 }
 
 @media (min-width: 640px) {
   .hero-content h1 br {
     display: none;
-  }
-}
-
-@media (min-width: 960px) {
-  .hero {
-    justify-content: center;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .hero-stage {
-    grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
-    gap: 2rem;
-  }
-
-  .hero-content {
-    text-align: left;
-    max-width: 34rem;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.6rem, 4.6vw, 3.9rem);
-  }
-
-  .hero-content .actions {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .hero-content .actions .btn {
-    width: auto;
-  }
-
-  .hero-sub {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .hero-drawing {
-    position: relative;
-    right: auto;
-    top: auto;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    opacity: 0.58;
   }
 }
 
@@ -777,8 +598,8 @@ p {
 }
 
 .card {
-  background: color-mix(in oklch, var(--card) 88%, white);
-  border: 1px solid color-mix(in oklch, var(--border) 80%, var(--ink));
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   overflow: hidden;
 }
@@ -1184,11 +1005,7 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .gear-lg,
-  .gear-md,
-  .gear-sm,
-  .gear-xs {
+  .reveal {
     animation: none;
   }
 }
