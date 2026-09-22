@@ -29,10 +29,11 @@ jobs:
 
       - name: Prepare site files
         run: |
-          mkdir -p _site/css _site/js
+          mkdir -p _site/css _site/js _site/images
           cp *.html .nojekyll _site/
           cp css/* _site/css/
           cp js/* _site/js/
+          cp images/* _site/images/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
