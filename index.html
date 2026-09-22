@@ -44,27 +44,84 @@
       </nav>
 
       <section class="hero">
+        <div class="hero-wash"></div>
         <div class="hero-stage">
           <div class="hero-content">
-            <div class="hero-underlay" aria-hidden="true">
-              <div class="hero-poly-bounce">
-                <svg class="hero-poly-spin" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
-                  <polygon
-                    class="hero-poly"
-                    points="210,58 341,134 341,286 210,362 79,286 79,134"
-                  />
-                </svg>
-              </div>
+            <div class="reveal">
+              <h1>Design.<br />Build. Create.</h1>
             </div>
-            <h1 class="hero-drop">Design.<br />Build. Create.</h1>
-            <p class="hero-kicker hero-drop" style="--delay: 90ms">Mechanical Engineering + Craftsmanship</p>
-            <p class="hero-sub hero-drop" style="--delay: 170ms">CAD design • CNC fabrication • Custom guitars • One-of-a-kind builds</p>
-            <div class="actions hero-drop" style="--delay: 280ms">
+            <div class="reveal" data-delay="150">
+              <p class="hero-kicker">Mechanical Engineering + Craftsmanship</p>
+              <p class="hero-sub">CAD design • CNC fabrication • Custom guitars • One-of-a-kind builds</p>
+            </div>
+            <div class="reveal actions" data-delay="300">
               <a class="btn btn-primary btn-lg" href="projects.html">View Work</a>
               <a class="btn btn-secondary btn-lg" href="contact.html">Get in Touch</a>
             </div>
           </div>
-          <div class="hero-stage-slot" aria-hidden="true"></div>
+
+          <div class="hero-drawing" aria-hidden="true">
+            <svg class="workshop-svg" viewBox="0 0 640 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="draw-frame" x="18" y="18" width="604" height="524" />
+              <path class="draw-tick" d="M18 38 H8 M38 18 V8 M622 38 H632 M602 18 V8 M18 522 H8 M38 542 V552 M622 522 H632 M602 542 V552" />
+              <path class="draw-center" d="M40 268 H600 M320 40 V520" />
+              <path class="draw-dim" d="M320 410 H447 M320 404 V416 M447 404 V416" />
+              <text class="draw-note" x="360" y="430">PITCH 140</text>
+              <text class="draw-note" x="36" y="48">FIG. A  ·  WORKSHOP STUDY</text>
+              <text class="draw-note" x="36" y="528">SCALE —  ·  DRAWN BY I. CARSON  ·  2026</text>
+
+              <g transform="translate(320 268)">
+                <g class="gear gear-lg">
+                  <path d="M 0.58,-74.00 L 6.50,-91.77 L 11.53,-91.27 L 13.87,-72.69 L 27.78,-68.59 L 28.85,-68.14 L 41.12,-82.30 L 45.58,-79.91 L 40.63,-61.85 L 51.91,-52.74 L 52.74,-51.91 L 69.49,-60.30 L 72.69,-56.39 L 61.20,-41.59 L 68.14,-28.85 L 68.59,-27.78 L 87.27,-29.12 L 88.74,-24.28 L 72.46,-15.01 L 74.00,-0.58 L 74.00,0.58 L 91.77,6.50 L 91.27,11.53 L 72.69,13.87 L 68.59,27.78 L 68.14,28.85 L 82.30,41.12 L 79.91,45.58 L 61.85,40.63 L 52.74,51.91 L 51.91,52.74 L 60.30,69.49 L 56.39,72.69 L 41.59,61.20 L 28.85,68.14 L 27.78,68.59 L 29.12,87.27 L 24.28,88.74 L 15.01,72.46 L 0.58,74.00 L -0.58,74.00 L -6.50,91.77 L -11.53,91.27 L -13.87,72.69 L -27.78,68.59 L -28.85,68.14 L -41.12,82.30 L -45.58,79.91 L -40.63,61.85 L -51.91,52.74 L -52.74,51.91 L -69.49,60.30 L -72.69,56.39 L -61.20,41.59 L -68.14,28.85 L -68.59,27.78 L -87.27,29.12 L -88.74,24.28 L -72.46,15.01 L -74.00,0.58 L -74.00,-0.58 L -91.77,-6.50 L -91.27,-11.53 L -72.69,-13.87 L -68.59,-27.78 L -68.14,-28.85 L -82.30,-41.12 L -79.91,-45.58 L -61.85,-40.63 L -52.74,-51.91 L -51.91,-52.74 L -60.30,-69.49 L -56.39,-72.69 L -41.59,-61.20 L -28.85,-68.14 L -27.78,-68.59 L -29.12,-87.27 L -24.28,-88.74 L -15.01,-72.46 L -0.58,-74.00 Z" />
+                  <circle r="46" />
+                  <circle r="16" />
+                  <circle cx="0" cy="-30" r="5" />
+                  <circle cx="26" cy="15" r="5" />
+                  <circle cx="-26" cy="15" r="5" />
+                  <path d="M0 -16 V16 M-16 0 H16" />
+                </g>
+              </g>
+
+              <g transform="translate(447 327)">
+                <g class="gear gear-md">
+                  <path d="M 0.52,-50.00 L 6.02,-63.72 L 10.67,-63.10 L 12.43,-48.43 L 24.55,-43.56 L 25.45,-43.04 L 37.07,-52.17 L 40.80,-49.31 L 34.98,-35.72 L 43.04,-25.45 L 43.56,-24.55 L 58.19,-26.64 L 59.99,-22.31 L 48.16,-13.45 L 50.00,-0.52 L 50.00,0.52 L 63.72,6.02 L 63.10,10.67 L 48.43,12.43 L 43.56,24.55 L 43.04,25.45 L 52.17,37.07 L 49.31,40.80 L 35.72,34.98 L 25.45,43.04 L 24.55,43.56 L 26.64,58.19 L 22.31,59.99 L 13.45,48.16 L 0.52,50.00 L -0.52,50.00 L -6.02,63.72 L -10.67,63.10 L -12.43,48.43 L -24.55,43.56 L -25.45,43.04 L -37.07,52.17 L -40.80,49.31 L -34.98,35.72 L -43.04,25.45 L -43.56,24.55 L -58.19,26.64 L -59.99,22.31 L -48.16,13.45 L -50.00,0.52 L -50.00,-0.52 L -63.72,-6.02 L -63.10,-10.67 L -48.43,-12.43 L -43.56,-24.55 L -43.04,-25.45 L -52.17,-37.07 L -49.31,-40.80 L -35.72,-34.98 L -25.45,-43.04 L -24.55,-43.56 L -26.64,-58.19 L -22.31,-59.99 L -13.45,-48.16 L -0.52,-50.00 Z" />
+                  <circle r="28" />
+                  <circle r="10" />
+                  <path d="M0 -10 V10 M-10 0 H10" />
+                </g>
+              </g>
+
+              <g transform="translate(223 201)">
+                <g class="gear gear-sm">
+                  <path d="M 0.47,-30.00 L 5.64,-39.60 L 9.95,-38.74 L 11.04,-27.89 L 20.88,-21.54 L 21.54,-20.88 L 31.99,-24.02 L 34.43,-20.36 L 27.53,-11.91 L 30.00,-0.47 L 30.00,0.47 L 39.60,5.64 L 38.74,9.95 L 27.89,11.04 L 21.54,20.88 L 20.88,21.54 L 24.02,31.99 L 20.36,34.43 L 11.91,27.53 L 0.47,30.00 L -0.47,30.00 L -5.64,39.60 L -9.95,38.74 L -11.04,27.89 L -20.88,21.54 L -21.54,20.88 L -31.99,24.02 L -34.43,20.36 L -27.53,11.91 L -30.00,0.47 L -30.00,-0.47 L -39.60,-5.64 L -38.74,-9.95 L -27.89,-11.04 L -21.54,-20.88 L -20.88,-21.54 L -24.02,-31.99 L -20.36,-34.43 L -11.91,-27.53 L -0.47,-30.00 Z" />
+                  <circle r="14" />
+                  <circle r="5" />
+                </g>
+              </g>
+
+              <g transform="translate(522 300)">
+                <g class="gear gear-xs">
+                  <path d="M 0.40,-19.00 L 4.87,-25.54 L 8.55,-24.55 L 9.15,-16.65 L 16.25,-9.84 L 16.65,-9.15 L 24.55,-8.55 L 25.54,-4.87 L 19.00,-0.40 L 16.65,9.15 L 16.25,9.84 L 19.68,16.99 L 16.99,19.68 L 9.84,16.25 L 0.40,19.00 L -0.40,19.00 L -4.87,25.54 L -8.55,24.55 L -9.15,16.65 L -16.25,9.84 L -16.65,9.15 L -24.55,8.55 L -25.54,4.87 L -19.00,0.40 L -16.65,-9.15 L -16.25,-9.84 L -19.68,-16.99 L -16.99,-19.68 L -9.84,-16.25 L -0.40,-19.00 Z" />
+                  <circle r="7" />
+                </g>
+              </g>
+
+              <g class="draw-caliper" transform="translate(78 360) rotate(-18)">
+                <path d="M20 10 L20 86 M20 10 L8 78 M20 10 L32 78" />
+                <circle cx="20" cy="10" r="4" />
+                <path d="M12 52 H28" />
+              </g>
+
+              <rect class="title-block" x="430" y="448" width="176" height="78" />
+              <path class="draw-tick" d="M430 474 H606 M518 448 V526" />
+              <text class="draw-note" x="438" y="466">TITLE</text>
+              <text class="draw-label" x="438" y="490">GEAR TRAIN</text>
+              <text class="draw-note" x="526" y="466">NO.</text>
+              <text class="draw-label" x="526" y="490">A-01</text>
+              <text class="draw-note" x="438" y="512">MATERIAL</text>
+              <text class="draw-label" x="438" y="528">PAPER &amp; INK</text>
+            </svg>
+          </div>
         </div>
         <div class="scroll-hint" aria-hidden="true">
           <div class="scroll-hint-ring">
