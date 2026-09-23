@@ -427,6 +427,8 @@ p {
 }
 
 .hero-model svg {
+  position: relative;
+  left: -1.5rem;
   width: min(100%, 42rem);
   height: auto;
   max-height: 24rem;
