@@ -419,10 +419,10 @@ p {
 .hero-model {
   position: absolute;
   left: 50%;
-  top: 42%;
+  top: 34%;
   z-index: 0;
-  width: min(108%, 28rem);
-  transform: translate(-50%, -58%);
+  width: min(92%, 22rem);
+  transform: translate(-50%, -62%);
   opacity: 0.34;
   pointer-events: none;
 }
@@ -502,10 +502,10 @@ p {
   }
 
   .hero-stage .hero-model {
-    left: 46%;
-    top: 46%;
-    width: 30rem;
-    opacity: 0.38;
+    left: 42%;
+    top: 36%;
+    width: 26rem;
+    opacity: 0.36;
   }
 
   .hero-stage-slot {
