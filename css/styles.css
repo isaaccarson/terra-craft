@@ -451,6 +451,11 @@ p {
   margin: 0 auto;
 }
 
+.hero-content .reveal {
+  position: relative;
+  z-index: 1;
+}
+
 @media (min-width: 640px) {
   .hero-content h1 br {
     display: none;
