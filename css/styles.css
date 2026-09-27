@@ -410,8 +410,15 @@ html[data-look="bench"] .site {
 
   html[data-look="bench"] .looks {
     margin-top: auto;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
     grid-column: auto;
+  }
+
+  html[data-look="bench"] .looks button {
+    width: 100%;
+    text-align: left;
   }
 
   html[data-look="bench"] .frame {
@@ -440,13 +447,23 @@ html[data-look="bench"] .site {
 }
 
 .btn-ink {
-  background: var(--fill);
-  color: var(--fill-ink);
+  background: var(--ink);
+  color: var(--bg);
 }
 
 html[data-look="forge"] .btn-ink {
   background: var(--ink);
   color: var(--bg);
+}
+
+html[data-look="vellum"] .btn-ink {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+html[data-look="bench"] .btn-ink {
+  background: var(--fill);
+  color: var(--fill-ink);
 }
 
 .row-actions {
@@ -594,13 +611,17 @@ html[data-look="vellum"] .floater {
   html[data-look="vellum"] .orbit {
     position: relative;
     inset: auto;
-    min-height: 32rem;
+    min-height: 30rem;
     order: 2;
   }
 
   html[data-look="vellum"] .gyre {
-    width: min(100%, 28rem);
-    top: 50%;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: min(100%, 26rem);
+    margin: 1.5rem auto 0;
   }
 
   html[data-look="vellum"] .stage-copy {
@@ -644,9 +665,46 @@ html[data-look="bench"] .stage-copy .row-actions {
   justify-content: flex-start;
 }
 
+html[data-look="bench"] .catalog .slot-title,
+html[data-look="bench"] .progress .slot-title {
+  display: none;
+}
+
 @media (max-width: 899px) {
   html[data-look="bench"] .orbit {
     display: none;
+  }
+
+  .stage {
+    min-height: auto;
+    overflow: visible;
+    padding: 5.75rem 1rem 2.25rem;
+    place-items: start center;
+  }
+
+  .orbit {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 13.5rem;
+    margin: 0 0 0.2rem;
+  }
+
+  .gyre {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: min(58vw, 13.5rem);
+    transform: translate(-50%, -50%);
+  }
+
+  .stage-copy h1 {
+    font-size: clamp(2.35rem, 11vw, 3.2rem);
+  }
+
+  html[data-look="forge"] .stage-copy {
+    padding: 0.2rem 0 0;
+    background: none;
   }
 }
 
