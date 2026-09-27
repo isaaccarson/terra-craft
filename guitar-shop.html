@@ -1,8 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-look="forge">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var q = new URLSearchParams(location.search).get("look");
+          var s = q || localStorage.getItem("terra-look");
+          if (s === "vellum" || s === "bench" || s === "forge") {
+            document.documentElement.dataset.look = s;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <title>Custom Guitar Shop - Isaac Carson</title>
     <meta
       name="description"
@@ -11,175 +22,200 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Oswald:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="page">
-      <nav class="nav" aria-label="Main">
-        <div class="nav-inner">
-          <a class="nav-logo" href="index.html">Isaac Carson</a>
-          <div class="nav-links">
-            <a href="guitar-shop.html">Guitar Shop</a>
-            <a href="projects.html">Projects</a>
-            <a href="photography.html">Photography</a>
-            <a href="resume.html">Resume</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
-          </div>
-          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <div class="nav-mobile">
-          <a href="guitar-shop.html">Guitar Shop</a>
-          <a href="projects.html">Projects</a>
-          <a href="photography.html">Photography</a>
-          <a href="resume.html">Resume</a>
-          <a class="nav-cta" href="contact.html">Contact</a>
-        </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere-grid"></div>
+      <div class="atmosphere-glow"></div>
+      <div class="atmosphere-grain"></div>
+    </div>
+
+    <header class="mast">
+      <a class="brand" href="index.html">
+        <svg class="brand-star" viewBox="0 0 48 48" aria-hidden="true">
+          <path
+            d="M24 3.5c2 0 16.5 18 16.5 27.5a16.5 16.5 0 1 1-33 0C7.5 21.5 22 3.5 24 3.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          />
+          <circle cx="24" cy="31" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="24" cy="31" r="2.2" fill="currentColor" />
+          <path d="M24 23.5v15M16.5 31h15" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span class="brand-name">Isaac Carson</span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+      <nav id="menu" class="menu" aria-label="Main">
+        <a href="guitar-shop.html">Guitar Shop</a>
+        <a href="projects.html">Projects</a>
+        <a href="photography.html">Photography</a>
+        <a href="resume.html">Resume</a>
+        <a class="contact" href="contact.html">Contact</a>
       </nav>
+      <div class="looks" role="group" aria-label="Preview looks">
+        <button type="button" data-set-look="forge" aria-pressed="true">Forge</button>
+        <button type="button" data-set-look="vellum">Vellum</button>
+        <button type="button" data-set-look="bench">Bench</button>
+      </div>
+    </header>
 
-      <section class="section section-intro">
-        <div class="container">
-          <div class="reveal">
-            <h1>Custom Guitar Shop</h1>
-            <p class="lead" style="margin-top: 1.5rem">
-              Hand-crafted instruments where traditional lutherie meets modern precision. Each guitar
-              is designed and built from scratch with meticulous attention to detail, combining CAD
-              design, CNC machining, and time-honored woodworking techniques.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div class="frame">
+      <main id="main" class="site">
+        <section class="lede wrap rise">
+          <p class="eyebrow">Custom shop</p>
+          <h1>Custom Guitar Shop</h1>
+          <p class="deck">
+            Hand-crafted instruments where traditional lutherie meets modern precision. Each guitar is designed
+            and built from scratch with meticulous attention to detail, combining CAD design, CNC machining, and
+            time-honored woodworking techniques.
+          </p>
+        </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Completed Builds</h2>
-            <p>Two custom instruments, each representing hundreds of hours of design and craftsmanship</p>
-          </div>
-          <div class="grid-2">
-            <article class="reveal card" data-delay="100">
-              <div class="card-media ratio-3-4">
-                <div class="media-emoji xl">🎸</div>
-                <div class="badge badge-right">Build #1</div>
-              </div>
-              <div class="card-body">
-                <h3>Custom Electric Guitar</h3>
-                <p><strong>Body:</strong> Custom carved</p>
-                <p><strong>Neck:</strong> Hand-shaped profile</p>
-                <p><strong>Process:</strong> CAD design, CNC routing, hand finishing</p>
-              </div>
-            </article>
-            <article class="reveal card" data-delay="200">
-              <div class="card-media ratio-3-4">
-                <div class="media-emoji xl">🎸</div>
-                <div class="badge badge-right">Build #2</div>
-              </div>
-              <div class="card-body">
-                <h3>Custom Electric Guitar</h3>
-                <p><strong>Body:</strong> Custom carved</p>
-                <p><strong>Neck:</strong> Hand-shaped profile</p>
-                <p><strong>Process:</strong> CAD design, CNC routing, hand finishing</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container">
-          <div class="reveal center section-head">
-            <h2>The Build Process</h2>
-          </div>
-          <div class="grid-4">
-            <div class="reveal icon-block" data-delay="100">
-              <div class="icon-circle">📐</div>
-              <h3>Design</h3>
-              <p class="muted">CAD modeling in Fusion 360 for precise geometry and toolpaths</p>
+        <section class="band">
+          <div class="wrap">
+            <div class="ledger-head rise">
+              <h2>Completed Builds</h2>
+              <p class="deck">Two custom instruments, each representing hundreds of hours of design and craftsmanship</p>
             </div>
-            <div class="reveal icon-block" data-delay="200">
-              <div class="icon-circle">⚙️</div>
-              <h3>CNC Machining</h3>
-              <p class="muted">Precision routing and cutting for consistent quality</p>
-            </div>
-            <div class="reveal icon-block" data-delay="300">
-              <div class="icon-circle">🪵</div>
-              <h3>Handwork</h3>
-              <p class="muted">Shaping, sanding, and finishing by hand for optimal feel</p>
-            </div>
-            <div class="reveal icon-block" data-delay="400">
-              <div class="icon-circle">🎨</div>
-              <h3>Finishing</h3>
-              <p class="muted">Custom finishes and final assembly with attention to detail</p>
+            <div class="catalog">
+              <article class="rise">
+                <div class="slot slot-portrait" data-kind="photo">
+                  <p class="slot-kicker">Photo coming</p>
+                  <p class="slot-title">Build #1 · custom electric</p>
+                </div>
+                <div class="build-copy">
+                  <p class="chip">Build #1</p>
+                  <h3>Custom Electric Guitar</h3>
+                  <p><strong>Body:</strong> Custom carved</p>
+                  <p><strong>Neck:</strong> Hand-shaped profile</p>
+                  <p><strong>Process:</strong> CAD design, CNC routing, hand finishing</p>
+                </div>
+              </article>
+              <article class="rise">
+                <div class="slot slot-portrait" data-kind="orbit">
+                  <p class="slot-kicker">Turntable coming</p>
+                  <p class="slot-title">Build #2 · custom electric</p>
+                </div>
+                <div class="build-copy">
+                  <p class="chip">Build #2</p>
+                  <h3>Custom Electric Guitar</h3>
+                  <p><strong>Body:</strong> Custom carved</p>
+                  <p><strong>Neck:</strong> Hand-shaped profile</p>
+                  <p><strong>Process:</strong> CAD design, CNC routing, hand finishing</p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Builds in Progress</h2>
-            <p>Multiple instruments currently in various stages of completion</p>
+        <section class="band">
+          <div class="wrap">
+            <div class="ledger-head rise">
+              <h2>The Build Process</h2>
+            </div>
+            <div class="steps">
+              <article class="rise">
+                <span class="n">01</span>
+                <div>
+                  <h3>Design</h3>
+                  <p>CAD modeling in Fusion 360 for precise geometry and toolpaths</p>
+                </div>
+              </article>
+              <article class="rise">
+                <span class="n">02</span>
+                <div>
+                  <h3>CNC Machining</h3>
+                  <p>Precision routing and cutting for consistent quality</p>
+                </div>
+              </article>
+              <article class="rise">
+                <span class="n">03</span>
+                <div>
+                  <h3>Handwork</h3>
+                  <p>Shaping, sanding, and finishing by hand for optimal feel</p>
+                </div>
+              </article>
+              <article class="rise">
+                <span class="n">04</span>
+                <div>
+                  <h3>Finishing</h3>
+                  <p>Custom finishes and final assembly with attention to detail</p>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="grid-builds">
-            <article class="reveal card" data-delay="100">
-              <div class="card-media ratio-square">
-                <div class="media-emoji">🎸</div>
-              </div>
-              <div class="card-body"><p>Build #3 - In Progress</p></div>
-            </article>
-            <article class="reveal card" data-delay="200">
-              <div class="card-media ratio-square">
-                <div class="media-emoji">🎸</div>
-              </div>
-              <div class="card-body"><p>Build #4 - In Progress</p></div>
-            </article>
-            <article class="reveal card" data-delay="300">
-              <div class="card-media ratio-square">
-                <div class="media-emoji">🎸</div>
-              </div>
-              <div class="card-body"><p>Build #5 - In Progress</p></div>
-            </article>
-            <article class="reveal card" data-delay="400">
-              <div class="card-media ratio-square">
-                <div class="media-emoji">🎸</div>
-              </div>
-              <div class="card-body"><p>Build #6 - In Progress</p></div>
-            </article>
-            <article class="reveal card" data-delay="500">
-              <div class="card-media ratio-square">
-                <div class="media-emoji">🎸</div>
-              </div>
-              <div class="card-body"><p>Build #7 - In Progress</p></div>
-            </article>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section section-soft">
-        <div class="container-narrow center">
-          <div class="reveal">
-            <h2>Commission a Custom Guitar</h2>
-            <p class="lead" style="margin: 1.5rem auto 2.5rem">
-              Each instrument is built to your specifications. From wood selection to final setup,
-              work directly with me to create your ideal guitar.
-            </p>
-            <a class="btn btn-primary btn-lg" href="contact.html">Start Your Build</a>
+        <section class="band">
+          <div class="wrap">
+            <div class="ledger-head rise">
+              <h2>Builds in Progress</h2>
+              <p class="deck">Multiple instruments currently in various stages of completion</p>
+            </div>
+            <div class="progress">
+              <article class="rise">
+                <div class="slot slot-square" data-kind="still">
+                  <p class="slot-kicker">Photo coming</p>
+                </div>
+                <div class="build-copy"><p>Build #3 - In Progress</p></div>
+              </article>
+              <article class="rise">
+                <div class="slot slot-square" data-kind="still">
+                  <p class="slot-kicker">Photo coming</p>
+                </div>
+                <div class="build-copy"><p>Build #4 - In Progress</p></div>
+              </article>
+              <article class="rise">
+                <div class="slot slot-square" data-kind="still">
+                  <p class="slot-kicker">Photo coming</p>
+                </div>
+                <div class="build-copy"><p>Build #5 - In Progress</p></div>
+              </article>
+              <article class="rise">
+                <div class="slot slot-square" data-kind="still">
+                  <p class="slot-kicker">Photo coming</p>
+                </div>
+                <div class="build-copy"><p>Build #6 - In Progress</p></div>
+              </article>
+              <article class="rise">
+                <div class="slot slot-square" data-kind="still">
+                  <p class="slot-kicker">Photo coming</p>
+                </div>
+                <div class="build-copy"><p>Build #7 - In Progress</p></div>
+              </article>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <footer class="footer">
-        <div class="footer-simple">
-          <p>© 2026 Isaac Carson. All rights reserved.</p>
-          <a class="footer-back" href="index.html">Back to Home</a>
+        <section class="closer wrap-narrow rise">
+          <h2>Commission a Custom Guitar</h2>
+          <p class="deck">
+            Each instrument is built to your specifications. From wood selection to final setup, work directly
+            with me to create your ideal guitar.
+          </p>
+          <a class="btn" href="contact.html">Start Your Build</a>
+        </section>
+      </main>
+
+      <footer class="colophon">
+        <div>
+          <strong>Isaac Carson</strong>
+          <p class="fine">Pittsburgh, PA</p>
         </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© 2026 Isaac Carson. All rights reserved.</small>
       </footer>
     </div>
     <script src="js/main.js"></script>

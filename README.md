@@ -1,6 +1,18 @@
 # Isaac Carson Portfolio
 
-Personal portfolio site. Edit the HTML, CSS, and JavaScript files directly.
+Personal portfolio and launching point for a custom guitar shop. Static HTML, CSS, and JavaScript.
+
+## Looks
+
+Three layout variations share the same pages. **Forge** is the default.
+
+| Look | Feel | How to preview |
+| --- | --- | --- |
+| **Forge** | Dark workshop, fading grid, centered gyro-pick with floating tools | Header button, or `?look=forge` |
+| **Vellum** | Paper and ink, split hero, journal entries | Header button, or `?look=vellum` |
+| **Bench** | Left identity rail, denser catalog | Header button, or `?look=bench` |
+
+The choice is stored in the browser. A `?look=` query on any page wins and updates the stored look.
 
 ## Files
 
@@ -10,8 +22,10 @@ Personal portfolio site. Edit the HTML, CSS, and JavaScript files directly.
 - `photography.html` — Photography
 - `resume.html` — Resume
 - `contact.html` — Contact
-- `css/styles.css` — All styles
-- `js/main.js` — Navigation, animations, and the contact form
+- `css/styles.css` — Looks, layout, and type
+- `js/main.js` — Look switcher, navigation, contact form
+
+Media slots labeled “photo coming” / “3D orbit coming” / “turntable coming” are honest placeholders for later photos, turntables, and CAD orbits.
 
 ## Preview locally
 
