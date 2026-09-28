@@ -15,17 +15,21 @@ const onScroll = () => {
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
+const setMenuOpen = (open) => {
+  menu?.classList.toggle("is-open", open);
+  toggle?.classList.toggle("is-open", open);
+  toggle?.setAttribute("aria-expanded", String(open));
+  toggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  if (toggle) toggle.textContent = open ? "Close" : "Menu";
+};
+
 toggle?.addEventListener("click", () => {
-  const open = menu?.classList.toggle("is-open");
-  toggle.classList.toggle("is-open", Boolean(open));
-  toggle.setAttribute("aria-expanded", String(Boolean(open)));
+  setMenuOpen(!menu?.classList.contains("is-open"));
 });
 
 menu?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    menu.classList.remove("is-open");
-    toggle?.classList.remove("is-open");
-    toggle?.setAttribute("aria-expanded", "false");
+    setMenuOpen(false);
   });
 });
 
