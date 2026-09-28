@@ -583,61 +583,6 @@ h3 {
   margin-top: 0.55rem;
 }
 
-.ledger-list {
-  list-style: none;
-  display: grid;
-  gap: 0;
-}
-
-.ledger-list a {
-  display: grid;
-  gap: 0.3rem;
-  padding: 0.85rem 0;
-  border-top: 1px solid var(--line);
-}
-
-.ledger-list .n {
-  font-family: var(--cond);
-  color: var(--ember);
-  letter-spacing: 0.08em;
-  font-size: 0.9rem;
-}
-
-.ledger-list strong {
-  font-family: var(--display);
-  font-size: 1.28rem;
-  letter-spacing: -0.03em;
-}
-
-.ledger-list em {
-  font-style: normal;
-  font-family: var(--hand);
-  color: var(--ember);
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.ledger-list .blurb {
-  color: var(--mute);
-}
-
-.ledger-list .go {
-  font-weight: 700;
-  opacity: 0.85;
-}
-
-.ledger-list a:hover .go {
-  color: var(--ember);
-}
-
-@media (min-width: 800px) {
-  .ledger-list a {
-    grid-template-columns: 3rem 0.9fr 1.2fr auto;
-    align-items: baseline;
-    gap: 1.2rem;
-  }
-}
-
 .closer {
   padding: 3.2rem 1rem 4.2rem;
   text-align: left;
