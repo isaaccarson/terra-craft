@@ -1241,14 +1241,20 @@ h3 {
   }
 
   .progress article {
-    grid-template-columns: 5.35rem 1fr;
-    gap: 0.65rem;
+    grid-template-columns: 6.75rem 1fr;
+    gap: 0.75rem;
     align-items: center;
   }
 
   .progress .slot {
-    min-height: 5.35rem;
+    min-height: 6.75rem;
     padding: 0.4rem;
+  }
+
+  .catalog .slot-kicker,
+  .progress .slot-kicker {
+    font-size: 0.82rem;
+    line-height: 1.2;
   }
 
   .folio {
@@ -1299,6 +1305,10 @@ h3 {
     padding-bottom: 1.6rem;
   }
 
+  .field {
+    margin-bottom: 0.75rem;
+  }
+
   .field input,
   .field select {
     min-height: 2.85rem;
@@ -1306,7 +1316,7 @@ h3 {
   }
 
   .field textarea {
-    min-height: 8rem;
+    min-height: 6.75rem;
     font-size: 1rem;
   }
 
