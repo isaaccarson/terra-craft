@@ -131,6 +131,33 @@ h3 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
+.rail-sketch {
+  display: none;
+}
+
+@keyframes rail-etch {
+  0% {
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dasharray: 1000 1000;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 1000 1000;
+    stroke-dashoffset: 0;
+  }
+  90% {
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: -1000;
+  }
+  100% {
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: -1000;
+  }
+}
+
 @keyframes grid-drift {
   from {
     transform: translateY(0);
@@ -326,6 +353,60 @@ h3 {
     padding: 0;
     margin-top: auto;
     width: 100%;
+  }
+
+  .mast.has-sketch .menu {
+    margin-top: 0;
+  }
+
+  .rail-sketch {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-height: 0;
+    width: 100%;
+    color: var(--ink);
+  }
+
+  .rail-sketch svg {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .rail-sketch path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 0.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.4;
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: 0;
+    animation: rail-etch 15s linear infinite;
+  }
+
+  .rail-sketch-switch {
+    display: flex;
+    justify-content: center;
+    flex: none;
+    gap: 0.38rem;
+    padding: 0.4rem 0 0.1rem;
+  }
+
+  .rail-sketch-switch button {
+    width: 0.42rem;
+    height: 0.42rem;
+    padding: 0;
+    border: 1px solid rgba(42, 28, 18, 0.38);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .rail-sketch-switch button.is-on {
+    background: rgba(42, 28, 18, 0.5);
   }
 
   .frame {
@@ -1034,11 +1115,18 @@ h3 {
   .floater,
   .slot[data-kind="orbit"]::after,
   .rise,
+  .rail-sketch path,
   :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a) {
     animation: none;
     transition: none;
     opacity: 1;
     transform: none;
+  }
+
+  .rail-sketch path {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 0.4;
   }
 
   :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):hover,
