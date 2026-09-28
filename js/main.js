@@ -110,12 +110,52 @@ const mountRailSketch = () => {
   switcher.setAttribute("role", "group");
   switcher.setAttribute("aria-label", "Sidebar sketch prototype");
 
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const paint = (t) => {
+    let dash = 1000;
+    let off = 0;
+    if (t < 0.4) {
+      dash = (t / 0.4) * 1000;
+    } else if (t < 0.5) {
+      dash = 1000;
+    } else if (t < 0.9) {
+      const p = (t - 0.5) / 0.4;
+      dash = 1000 * (1 - p);
+      off = -1000 * p;
+    } else {
+      dash = 0;
+      off = -1000;
+    }
+    path.setAttribute("stroke-dasharray", `${dash} 1000`);
+    path.setAttribute("stroke-dashoffset", String(off));
+  };
+
+  let raf = 0;
+  let start = 0;
+  const stopEtch = () => cancelAnimationFrame(raf);
+  const playEtch = () => {
+    stopEtch();
+    if (reduced) {
+      path.setAttribute("stroke-dasharray", "1000");
+      path.setAttribute("stroke-dashoffset", "0");
+      return;
+    }
+    start = performance.now();
+    const tick = (now) => {
+      paint(((now - start) % 15000) / 15000);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  };
+  path.__etchPauseAt = (ms) => {
+    stopEtch();
+    paint((ms % 15000) / 15000);
+  };
+
   const apply = (next) => {
     key = next;
     path.setAttribute("d", SKETCH_PATHS[key]);
-    path.style.animation = "none";
-    void path.getBoundingClientRect();
-    path.style.animation = "";
+    playEtch();
     switcher.querySelectorAll("button").forEach((btn) => {
       btn.classList.toggle("is-on", btn.dataset.sketch === key);
     });
@@ -137,6 +177,7 @@ const mountRailSketch = () => {
   wrap.append(switcher);
   brand.after(wrap);
   mast.classList.add("has-sketch");
+  playEtch();
 };
 
 mountRailSketch();

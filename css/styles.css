@@ -135,29 +135,6 @@ h3 {
   display: none;
 }
 
-@keyframes rail-etch {
-  0% {
-    stroke-dasharray: 0 1000;
-    stroke-dashoffset: 0;
-  }
-  40% {
-    stroke-dasharray: 1000 1000;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 1000 1000;
-    stroke-dashoffset: 0;
-  }
-  90% {
-    stroke-dasharray: 0 1000;
-    stroke-dashoffset: -1000;
-  }
-  100% {
-    stroke-dasharray: 0 1000;
-    stroke-dashoffset: -1000;
-  }
-}
-
 @keyframes grid-drift {
   from {
     transform: translateY(0);
@@ -382,9 +359,6 @@ h3 {
     stroke-linecap: round;
     stroke-linejoin: round;
     opacity: 0.4;
-    stroke-dasharray: 0 1000;
-    stroke-dashoffset: 0;
-    animation: rail-etch 15s linear infinite;
   }
 
   .rail-sketch-switch {
@@ -1115,18 +1089,11 @@ h3 {
   .floater,
   .slot[data-kind="orbit"]::after,
   .rise,
-  .rail-sketch path,
   :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a) {
     animation: none;
     transition: none;
     opacity: 1;
     transform: none;
-  }
-
-  .rail-sketch path {
-    stroke-dasharray: none;
-    stroke-dashoffset: 0;
-    opacity: 0.4;
   }
 
   :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):hover,
