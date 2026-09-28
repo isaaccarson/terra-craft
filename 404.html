@@ -7,32 +7,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Oswald:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="page">
-      <nav class="nav is-scrolled" aria-label="Main">
-        <div class="nav-inner">
-          <a class="nav-logo" href="index.html">Isaac Carson</a>
-          <div class="nav-links">
-            <a href="guitar-shop.html">Guitar Shop</a>
-            <a href="projects.html">Projects</a>
-            <a href="photography.html">Photography</a>
-            <a href="resume.html">Resume</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
-          </div>
-        </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere-grid"></div>
+      <div class="atmosphere-glow"></div>
+      <div class="atmosphere-grain"></div>
+    </div>
+    <header class="mast is-stuck">
+      <a class="brand" href="index.html">
+        <svg class="brand-star" viewBox="0 0 48 48" aria-hidden="true">
+          <path
+            d="M24 3.5c2 0 16.5 18 16.5 27.5a16.5 16.5 0 1 1-33 0C7.5 21.5 22 3.5 24 3.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          />
+          <circle cx="24" cy="31" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="24" cy="31" r="2.2" fill="currentColor" />
+          <path d="M24 23.5v15M16.5 31h15" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span class="brand-name">Isaac Carson</span>
+      </a>
+      <nav id="menu" class="menu" aria-label="Main" style="display: flex">
+        <a href="guitar-shop.html">Guitar Shop</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html">Home</a>
       </nav>
-      <section class="hero">
-        <div class="hero-content">
+    </header>
+    <div class="frame">
+      <main id="main" class="site">
+        <section class="lede wrap-narrow">
+          <p class="eyebrow">404</p>
           <h1>Page not found</h1>
-          <p class="hero-sub">That page does not exist. Head back to the home page to keep browsing.</p>
-          <a class="btn btn-primary btn-lg" href="index.html">Back to Home</a>
-        </div>
-      </section>
+          <p class="deck">That page does not exist. Head back to the home page to keep browsing.</p>
+          <div class="row-actions">
+            <a class="btn" href="index.html">Back to Home</a>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>

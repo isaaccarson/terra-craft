@@ -11,152 +11,145 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Oswald:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="page">
-      <nav class="nav" aria-label="Main">
-        <div class="nav-inner">
-          <a class="nav-logo" href="index.html">Isaac Carson</a>
-          <div class="nav-links">
-            <a href="guitar-shop.html">Guitar Shop</a>
-            <a href="projects.html">Projects</a>
-            <a href="photography.html">Photography</a>
-            <a href="resume.html">Resume</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere-grid"></div>
+      <div class="atmosphere-glow"></div>
+      <div class="atmosphere-grain"></div>
+    </div>
+
+    <header class="mast">
+      <a class="brand" href="index.html">
+        <svg class="brand-star" viewBox="0 0 48 48" aria-hidden="true">
+          <path
+            d="M24 3.5c2 0 16.5 18 16.5 27.5a16.5 16.5 0 1 1-33 0C7.5 21.5 22 3.5 24 3.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          />
+          <circle cx="24" cy="31" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="24" cy="31" r="2.2" fill="currentColor" />
+          <path d="M24 23.5v15M16.5 31h15" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span class="brand-name">Isaac Carson</span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+      <nav id="menu" class="menu" aria-label="Main">
+        <a href="guitar-shop.html">Guitar Shop</a>
+        <a href="projects.html">Projects</a>
+        <a href="photography.html">Photography</a>
+        <a href="resume.html">Resume</a>
+        <a class="contact" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="frame">
+      <main id="main" class="site">
+        <section class="lede wrap-narrow rise">
+          <p class="eyebrow">Pittsburgh, PA</p>
+          <h1>Let's Connect</h1>
+          <p class="deck">
+            Whether you're interested in a custom guitar, have a fabrication project in mind, or want to discuss
+            opportunities, I'd love to hear from you.
+          </p>
+        </section>
+
+        <section class="wrap mail">
+          <form id="contact-form" class="rise">
+            <h2 style="margin-bottom: 1.2rem">Send a Message</h2>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="your.email@example.com" />
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="guitar">Custom Guitar Commission</option>
+                <option value="fabrication">Fabrication Project</option>
+                <option value="employment">Employment Opportunity</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell me about your project or inquiry..."
+              ></textarea>
+            </div>
+            <button class="btn" type="submit">Send Message</button>
+            <p id="form-status" class="form-status" role="status"></p>
+          </form>
+
+          <aside class="rise">
+            <div class="aside-block">
+              <h2>Contact Information</h2>
+              <h3>Location</h3>
+              <p>Pittsburgh, PA</p>
+              <h3 style="margin-top: 0.9rem">Email</h3>
+              <p><a href="mailto:isaac@example.com">isaac@example.com</a></p>
+            </div>
+            <div class="aside-block">
+              <h2>Project Inquiries</h2>
+              <p class="fine">
+                <strong>Guitar Commissions:</strong> Custom builds are currently available. Lead time varies by
+                project complexity.
+              </p>
+              <p class="fine" style="margin-top: 0.8rem">
+                <strong>Fabrication Projects:</strong> Taking on select custom fabrication and design projects.
+              </p>
+              <p class="fine" style="margin-top: 0.8rem">
+                <strong>Collaborations:</strong> Open to interesting projects that combine engineering, design,
+                and craftsmanship.
+              </p>
+            </div>
+            <div class="aside-block">
+              <h2>Response Time</h2>
+              <p class="fine">
+                I typically respond to inquiries within 24-48 hours. For urgent matters, please indicate so in
+                your message subject.
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="wrap">
+          <h2 class="rise" style="margin-bottom: 1rem">Explore My Work</h2>
+          <div class="explore rise">
+            <a class="btn" href="projects.html">View Projects</a>
+            <a class="btn btn-ink" href="guitar-shop.html">Guitar Shop</a>
+            <a class="btn btn-ink" href="resume.html">Resume</a>
           </div>
-          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+        </section>
+      </main>
+
+      <footer class="colophon">
+        <div>
+          <strong>Isaac Carson</strong>
+          <p class="fine">Pittsburgh, PA</p>
         </div>
-        <div class="nav-mobile">
+        <nav>
+          <a href="index.html">Home</a>
           <a href="guitar-shop.html">Guitar Shop</a>
           <a href="projects.html">Projects</a>
-          <a href="photography.html">Photography</a>
-          <a href="resume.html">Resume</a>
-          <a class="nav-cta" href="contact.html">Contact</a>
-        </div>
-      </nav>
-
-      <section class="section section-intro">
-        <div class="container-narrow center">
-          <div class="reveal">
-            <h1>Let's Connect</h1>
-            <p class="lead" style="margin: 1.5rem auto 0">
-              Whether you're interested in a custom guitar, have a fabrication project in mind, or
-              want to discuss opportunities, I'd love to hear from you.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container form-grid">
-          <div class="reveal">
-            <form id="contact-form" class="card padded-card">
-              <h2 style="margin-bottom: 1.5rem">Send a Message</h2>
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required placeholder="Your name" />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div class="field">
-                <label for="subject">Subject</label>
-                <select id="subject" name="subject" required>
-                  <option value="">Select a subject</option>
-                  <option value="guitar">Custom Guitar Commission</option>
-                  <option value="fabrication">Fabrication Project</option>
-                  <option value="employment">Employment Opportunity</option>
-                  <option value="collaboration">Collaboration</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Tell me about your project or inquiry..."
-                ></textarea>
-              </div>
-              <button class="btn btn-primary btn-lg" type="submit" style="width: 100%">
-                Send Message
-              </button>
-              <p id="form-status" class="form-status" role="status"></p>
-            </form>
-          </div>
-
-          <div class="stack">
-            <article class="reveal card padded-card" data-delay="100">
-              <h2 style="margin-bottom: 1.5rem">Contact Information</h2>
-              <div class="info-block">
-                <h3>Location</h3>
-                <p>Pittsburgh, PA</p>
-              </div>
-              <div class="info-block">
-                <h3>Email</h3>
-                <a href="mailto:isaac@example.com">isaac@example.com</a>
-              </div>
-            </article>
-            <article class="reveal card padded-card" data-delay="200">
-              <h2 style="margin-bottom: 1.5rem">Project Inquiries</h2>
-              <p class="muted">
-                <strong>Guitar Commissions:</strong> Custom builds are currently available. Lead time
-                varies by project complexity.
-              </p>
-              <p class="muted" style="margin-top: 1rem">
-                <strong>Fabrication Projects:</strong> Taking on select custom fabrication and design
-                projects.
-              </p>
-              <p class="muted" style="margin-top: 1rem">
-                <strong>Collaborations:</strong> Open to interesting projects that combine
-                engineering, design, and craftsmanship.
-              </p>
-            </article>
-            <article class="reveal card padded-card" data-delay="300">
-              <h2 style="margin-bottom: 1rem">Response Time</h2>
-              <p class="muted">
-                I typically respond to inquiries within 24-48 hours. For urgent matters, please
-                indicate so in your message subject.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container-narrow center">
-          <div class="reveal">
-            <h2 style="margin-bottom: 2rem">Explore My Work</h2>
-            <div class="actions">
-              <a class="btn btn-outline" href="projects.html">View Projects</a>
-              <a class="btn btn-outline" href="guitar-shop.html">Guitar Shop</a>
-              <a class="btn btn-outline" href="resume.html">Resume</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer-simple">
-          <p>© 2026 Isaac Carson. All rights reserved.</p>
-          <a class="footer-back" href="index.html">Back to Home</a>
-        </div>
+        </nav>
+        <small>© 2026 Isaac Carson. All rights reserved.</small>
       </footer>
     </div>
     <script src="js/main.js"></script>

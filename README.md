@@ -1,6 +1,8 @@
 # Isaac Carson Portfolio
 
-Personal portfolio site. Edit the HTML, CSS, and JavaScript files directly.
+Personal portfolio and launching point for a custom guitar shop. Static HTML, CSS, and JavaScript.
+
+Paper-and-ink visuals with a left identity rail and a dense catalog. One look across every page.
 
 ## Files
 
@@ -10,8 +12,10 @@ Personal portfolio site. Edit the HTML, CSS, and JavaScript files directly.
 - `photography.html` — Photography
 - `resume.html` — Resume
 - `contact.html` — Contact
-- `css/styles.css` — All styles
-- `js/main.js` — Navigation, animations, and the contact form
+- `css/styles.css` — Type, color, and layout
+- `js/main.js` — Navigation and contact form
+
+Media slots labeled “photo coming” / “3D orbit coming” / “turntable coming” are honest placeholders for later photos, turntables, and CAD orbits.
 
 ## Preview locally
 

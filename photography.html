@@ -4,127 +4,154 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photography - Isaac Carson</title>
-    <meta
-      name="description"
-      content="Nature and landscape photography from Isaac Carson."
-    />
+    <meta name="description" content="Nature and landscape photography from Isaac Carson." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Oswald:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="page">
-      <nav class="nav" aria-label="Main">
-        <div class="nav-inner">
-          <a class="nav-logo" href="index.html">Isaac Carson</a>
-          <div class="nav-links">
-            <a href="guitar-shop.html">Guitar Shop</a>
-            <a href="projects.html">Projects</a>
-            <a href="photography.html">Photography</a>
-            <a href="resume.html">Resume</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
-          </div>
-          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <div class="nav-mobile">
-          <a href="guitar-shop.html">Guitar Shop</a>
-          <a href="projects.html">Projects</a>
-          <a href="photography.html">Photography</a>
-          <a href="resume.html">Resume</a>
-          <a class="nav-cta" href="contact.html">Contact</a>
-        </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere-grid"></div>
+      <div class="atmosphere-glow"></div>
+      <div class="atmosphere-grain"></div>
+    </div>
+
+    <header class="mast">
+      <a class="brand" href="index.html">
+        <svg class="brand-star" viewBox="0 0 48 48" aria-hidden="true">
+          <path
+            d="M24 3.5c2 0 16.5 18 16.5 27.5a16.5 16.5 0 1 1-33 0C7.5 21.5 22 3.5 24 3.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          />
+          <circle cx="24" cy="31" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="24" cy="31" r="2.2" fill="currentColor" />
+          <path d="M24 23.5v15M16.5 31h15" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span class="brand-name">Isaac Carson</span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+      <nav id="menu" class="menu" aria-label="Main">
+        <a href="guitar-shop.html">Guitar Shop</a>
+        <a href="projects.html">Projects</a>
+        <a href="photography.html">Photography</a>
+        <a href="resume.html">Resume</a>
+        <a class="contact" href="contact.html">Contact</a>
       </nav>
+    </header>
 
-      <section class="section section-intro">
-        <div class="container">
-          <div class="reveal">
-            <h1>Photography</h1>
-            <p class="lead" style="margin-top: 1.5rem">
-              Nature and landscape photography captured during moments away from the workshop. A
-              collection of scenes that inspire the aesthetic sensibilities behind my design work.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div class="frame">
+      <main id="main" class="site">
+        <section class="lede wrap rise">
+          <p class="eyebrow">Away from the bench</p>
+          <h1>Photography</h1>
+          <p class="deck">
+            Nature and landscape photography captured during moments away from the workshop. A collection of
+            scenes that inspire the aesthetic sensibilities behind my design work.
+          </p>
+        </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="grid-gallery photos">
-            <article class="reveal card photo-feature" data-delay="100">
-              <div class="card-media ratio-4-3">
-                <div class="media-emoji xl">🏔️</div>
+        <section class="band">
+          <div class="wrap folio">
+            <article class="wide rise">
+              <div class="slot" data-kind="photo">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Landscape · featured</p>
               </div>
             </article>
-            <article class="reveal card" data-delay="200">
-              <div class="card-media ratio-square"><div class="media-emoji">🌲</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Forest</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="250">
-              <div class="card-media ratio-square"><div class="media-emoji">🌅</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Horizon</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="300">
-              <div class="card-media ratio-square"><div class="media-emoji">🏞️</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Valley</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="350">
-              <div class="card-media ratio-square"><div class="media-emoji">🌊</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Water</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="400">
-              <div class="card-media ratio-square"><div class="media-emoji">🍂</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Autumn</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="450">
-              <div class="card-media ratio-square"><div class="media-emoji">⛰️</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Ridge</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="500">
-              <div class="card-media ratio-square"><div class="media-emoji">🌄</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Dusk</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="550">
-              <div class="card-media ratio-square"><div class="media-emoji">🌾</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Field</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="600">
-              <div class="card-media ratio-square"><div class="media-emoji">🏕️</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Camp</p>
+              </div>
             </article>
-            <article class="reveal card" data-delay="650">
-              <div class="card-media ratio-square"><div class="media-emoji">🌳</div></div>
+            <article class="rise">
+              <div class="slot slot-square" data-kind="still">
+                <p class="slot-kicker">Print coming</p>
+                <p class="slot-title">Grove</p>
+              </div>
             </article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section section-alt">
-        <div class="container-narrow center">
-          <div class="reveal">
-            <p class="lead" style="margin: 0 auto">
-              Photography offers a counterbalance to fabrication work—capturing rather than creating,
-              observing rather than designing. The attention to composition, light, and form in nature
-              photography informs the aesthetic decisions in every mechanical design and build.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section class="closer wrap-narrow rise">
+          <p class="deck">
+            Photography offers a counterbalance to fabrication work—capturing rather than creating, observing
+            rather than designing. The attention to composition, light, and form in nature photography informs
+            the aesthetic decisions in every mechanical design and build.
+          </p>
+          <p class="fine" style="margin-top: 1.5rem">Interested in my design and fabrication work?</p>
+          <a class="btn" href="projects.html">View Projects</a>
+        </section>
+      </main>
 
-      <section class="section">
-        <div class="container-narrow center">
-          <div class="reveal">
-            <p class="muted" style="margin-bottom: 2rem">
-              Interested in my design and fabrication work?
-            </p>
-            <a class="btn btn-primary btn-lg" href="projects.html">View Projects</a>
-          </div>
+      <footer class="colophon">
+        <div>
+          <strong>Isaac Carson</strong>
+          <p class="fine">Pittsburgh, PA</p>
         </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer-simple">
-          <p>© 2026 Isaac Carson. All rights reserved.</p>
-          <a class="footer-back" href="index.html">Back to Home</a>
-        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© 2026 Isaac Carson. All rights reserved.</small>
       </footer>
     </div>
     <script src="js/main.js"></script>

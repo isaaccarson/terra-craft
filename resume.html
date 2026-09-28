@@ -8,63 +8,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Oswald:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="page">
-      <nav class="nav" aria-label="Main">
-        <div class="nav-inner">
-          <a class="nav-logo" href="index.html">Isaac Carson</a>
-          <div class="nav-links">
-            <a href="guitar-shop.html">Guitar Shop</a>
-            <a href="projects.html">Projects</a>
-            <a href="photography.html">Photography</a>
-            <a href="resume.html">Resume</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
-          </div>
-          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <div class="nav-mobile">
-          <a href="guitar-shop.html">Guitar Shop</a>
-          <a href="projects.html">Projects</a>
-          <a href="photography.html">Photography</a>
-          <a href="resume.html">Resume</a>
-          <a class="nav-cta" href="contact.html">Contact</a>
-        </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere-grid"></div>
+      <div class="atmosphere-glow"></div>
+      <div class="atmosphere-grain"></div>
+    </div>
+
+    <header class="mast">
+      <a class="brand" href="index.html">
+        <svg class="brand-star" viewBox="0 0 48 48" aria-hidden="true">
+          <path
+            d="M24 3.5c2 0 16.5 18 16.5 27.5a16.5 16.5 0 1 1-33 0C7.5 21.5 22 3.5 24 3.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          />
+          <circle cx="24" cy="31" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="24" cy="31" r="2.2" fill="currentColor" />
+          <path d="M24 23.5v15M16.5 31h15" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span class="brand-name">Isaac Carson</span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+      <nav id="menu" class="menu" aria-label="Main">
+        <a href="guitar-shop.html">Guitar Shop</a>
+        <a href="projects.html">Projects</a>
+        <a href="photography.html">Photography</a>
+        <a href="resume.html">Resume</a>
+        <a class="contact" href="contact.html">Contact</a>
       </nav>
+    </header>
 
-      <section class="section section-intro">
-        <div class="container-narrow">
-          <div class="reveal">
-            <h1>Isaac Carson</h1>
-            <p class="hero-kicker" style="margin-top: 1rem">Mechanical Engineer</p>
-            <p class="muted" style="font-size: 1.125rem">Pittsburgh, PA</p>
-          </div>
-        </div>
-      </section>
+    <div class="frame">
+      <main id="main" class="site">
+        <section class="lede wrap-narrow rise">
+          <p class="eyebrow">Pittsburgh, PA</p>
+          <h1>Isaac Carson</h1>
+          <p class="deck">Mechanical Engineer</p>
+        </section>
 
-      <section class="section">
-        <div class="container-narrow stack">
-          <article class="reveal card padded-card">
-            <h2 style="margin-bottom: 1.5rem">Education</h2>
+        <div class="wrap-narrow vita">
+          <section class="rise">
+            <h2>Education</h2>
             <h3>The Pennsylvania State University</h3>
-            <p class="muted">Bachelor of Science in Mechanical Engineering</p>
-            <p class="muted" style="font-size: 0.875rem">University Park • Graduated December 2025</p>
-          </article>
+            <p class="fine">Bachelor of Science in Mechanical Engineering</p>
+            <p class="fine">University Park • Graduated December 2025</p>
+          </section>
 
-          <article class="reveal card padded-card" data-delay="100">
-            <h2 style="margin-bottom: 1.5rem">Professional Experience</h2>
+          <section class="rise">
+            <h2>Professional Experience</h2>
             <div class="job">
               <h3>Mechanical Engineer</h3>
-              <p class="muted">SMS Group</p>
-              <p class="muted" style="font-size: 0.875rem">Pittsburgh, PA • Current</p>
+              <p class="fine">SMS Group</p>
+              <p class="fine">Pittsburgh, PA • Current</p>
               <ul>
                 <li>Mechanical design for industrial manufacturing equipment</li>
                 <li>CAD modeling and technical documentation</li>
@@ -73,19 +78,19 @@
             </div>
             <div class="job">
               <h3>Engineering Intern</h3>
-              <p class="muted">SMS Group</p>
-              <p class="muted" style="font-size: 0.875rem">Pittsburgh, PA</p>
+              <p class="fine">SMS Group</p>
+              <p class="fine">Pittsburgh, PA</p>
               <ul>
                 <li>Completed mechanical design projects for metals industry applications</li>
                 <li>Applied engineering principles to real-world industrial challenges</li>
               </ul>
             </div>
-          </article>
+          </section>
 
-          <article class="reveal card padded-card" data-delay="200">
-            <h2 style="margin-bottom: 1.5rem">Technical Skills</h2>
-            <div class="skill-grid">
-              <div class="skill-col">
+          <section class="rise">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+              <div>
                 <h3>CAD &amp; Design</h3>
                 <ul>
                   <li>Fusion 360</li>
@@ -94,7 +99,7 @@
                   <li>Design for Manufacturing</li>
                 </ul>
               </div>
-              <div class="skill-col">
+              <div>
                 <h3>Fabrication</h3>
                 <ul>
                   <li>CNC Machining</li>
@@ -104,49 +109,50 @@
                 </ul>
               </div>
             </div>
-          </article>
+          </section>
 
-          <article class="reveal card padded-card" data-delay="300">
-            <h2 style="margin-bottom: 1.5rem">Notable Projects</h2>
-            <div class="note-list">
-              <div>
-                <h3>Custom Guitar Building</h3>
-                <p class="muted">
-                  Two completed hand-crafted electric guitars built from scratch using CAD design, CNC
-                  machining, and traditional lutherie techniques
-                </p>
-              </div>
-              <div>
-                <h3>Commercial Metal Fabrication</h3>
-                <p class="muted">
-                  Custom signage and fabrication projects for commercial and institutional clients
-                  including Penn State Athletics
-                </p>
-              </div>
-              <div>
-                <h3>Custom Woodworking</h3>
-                <p class="muted">
-                  Various one-off functional pieces combining design aesthetics with practical
-                  application
-                </p>
-              </div>
+          <section class="rise">
+            <h2>Notable Projects</h2>
+            <div class="job">
+              <h3>Custom Guitar Building</h3>
+              <p class="fine">
+                Two completed hand-crafted electric guitars built from scratch using CAD design, CNC machining,
+                and traditional lutherie techniques
+              </p>
             </div>
-          </article>
-
-          <div class="reveal center" data-delay="400" style="padding-top: 1rem">
-            <p class="muted" style="margin-bottom: 1.5rem">Interested in working together?</p>
-            <div class="actions">
-              <a class="btn btn-outline" href="contact.html">Contact Me</a>
+            <div class="job">
+              <h3>Commercial Metal Fabrication</h3>
+              <p class="fine">
+                Custom signage and fabrication projects for commercial and institutional clients including Penn
+                State Athletics
+              </p>
             </div>
-          </div>
+            <div class="job">
+              <h3>Custom Woodworking</h3>
+              <p class="fine">
+                Various one-off functional pieces combining design aesthetics with practical application
+              </p>
+            </div>
+          </section>
         </div>
-      </section>
 
-      <footer class="footer">
-        <div class="footer-simple">
-          <p>© 2026 Isaac Carson. All rights reserved.</p>
-          <a class="footer-back" href="index.html">Back to Home</a>
+        <section class="closer wrap-narrow rise">
+          <p class="fine">Interested in working together?</p>
+          <a class="btn" href="contact.html">Contact Me</a>
+        </section>
+      </main>
+
+      <footer class="colophon">
+        <div>
+          <strong>Isaac Carson</strong>
+          <p class="fine">Pittsburgh, PA</p>
         </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <small>© 2026 Isaac Carson. All rights reserved.</small>
       </footer>
     </div>
     <script src="js/main.js"></script>
