@@ -1081,9 +1081,40 @@ h3 {
     margin-top: 0.2rem;
   }
 
+  .btn,
+  .menu-btn,
+  .menu a.contact {
+    position: relative;
+    isolation: isolate;
+    clip-path: none;
+    background: transparent;
+  }
+
   .btn {
     min-height: 3rem;
     padding: 0.8rem 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .btn::before,
+  .menu-btn::before,
+  .menu a.contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--ember);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  .btn-ink::before {
+    background: var(--ink);
+  }
+
+  .menu-btn::before,
+  .menu a.contact::before {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
   }
 
   .stage {
