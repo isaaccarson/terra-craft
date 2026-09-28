@@ -1,40 +1,9 @@
 document.documentElement.classList.add("js");
-if (!document.documentElement.dataset.look) {
-  document.documentElement.dataset.look = "forge";
-}
-
-const LOOKS = ["forge", "vellum", "bench"];
-
-const applyLook = (name, writeUrl) => {
-  const look = LOOKS.includes(name) ? name : "forge";
-  document.documentElement.dataset.look = look;
-  try {
-    localStorage.setItem("terra-look", look);
-  } catch {
-    /* private mode */
-  }
-  document.querySelectorAll("[data-set-look]").forEach((btn) => {
-    btn.setAttribute("aria-pressed", String(btn.dataset.setLook === look));
-  });
-  if (writeUrl) {
-    const url = new URL(location.href);
-    url.searchParams.set("look", look);
-    history.replaceState({}, "", url);
-  }
-};
-
-const params = new URLSearchParams(location.search);
-let stored = null;
 try {
-  stored = localStorage.getItem("terra-look");
+  localStorage.removeItem("terra-look");
 } catch {
-  stored = null;
+  /* private mode */
 }
-applyLook(params.get("look") || stored || "forge", Boolean(params.get("look")));
-
-document.querySelectorAll("[data-set-look]").forEach((btn) => {
-  btn.addEventListener("click", () => applyLook(btn.dataset.setLook, true));
-});
 
 const mast = document.querySelector(".mast");
 const toggle = document.querySelector(".menu-btn");

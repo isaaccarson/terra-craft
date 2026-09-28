@@ -1,19 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" data-look="forge">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function () {
-        try {
-          var q = new URLSearchParams(location.search).get("look");
-          var s = q || localStorage.getItem("terra-look");
-          if (s === "vellum" || s === "bench" || s === "forge") {
-            document.documentElement.dataset.look = s;
-          }
-        } catch (e) {}
-      })();
-    </script>
     <title>Resume - Isaac Carson</title>
     <meta name="description" content="Resume for Isaac Carson, mechanical engineer in Pittsburgh, PA." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,11 +46,6 @@
         <a href="resume.html">Resume</a>
         <a class="contact" href="contact.html">Contact</a>
       </nav>
-      <div class="looks" role="group" aria-label="Preview looks">
-        <button type="button" data-set-look="forge" aria-pressed="true">Forge</button>
-        <button type="button" data-set-look="vellum">Vellum</button>
-        <button type="button" data-set-look="bench">Bench</button>
-      </div>
     </header>
 
     <div class="frame">
