@@ -218,6 +218,10 @@ h3 {
 }
 
 .menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-weight: 600;
   color: var(--mute);
   padding: 0.35rem 0;
@@ -236,6 +240,17 @@ h3 {
   clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
 }
 
+.nav-ico {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+  opacity: 0.78;
+}
+
+.menu a.contact .nav-ico {
+  opacity: 1;
+}
+
 @media (min-width: 880px) and (max-width: 959px) {
   .menu-btn {
     display: none;
@@ -249,6 +264,10 @@ h3 {
     grid-column: auto;
     gap: 1.3rem;
     padding: 0;
+  }
+
+  .menu a {
+    justify-content: flex-start;
   }
 }
 
@@ -301,11 +320,12 @@ h3 {
   .menu {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0.65rem;
     grid-column: auto;
     padding: 0;
     margin-top: auto;
+    width: 100%;
   }
 
   .frame {
@@ -328,8 +348,26 @@ h3 {
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
   filter: brightness(1.06);
+}
+
+:is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a) {
+  transition:
+    transform 0.48s cubic-bezier(0.22, 1.55, 0.36, 1),
+    filter 0.2s ease,
+    color 0.2s ease;
+}
+
+:is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):hover,
+:is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):focus-visible {
+  transform: translateY(-0.2rem);
+}
+
+:is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):active {
+  transform: translateY(0);
+  transition-duration: 0.14s;
 }
 
 .btn-ink {
@@ -549,15 +587,7 @@ h3 {
 .trio article {
   background: color-mix(in srgb, var(--bg-2) 55%, transparent);
   padding: 1.1rem 1rem;
-  rotate: -0.4deg;
-}
-
-.trio article:nth-child(2) {
-  rotate: 0.6deg;
-}
-
-.trio article:nth-child(3) {
-  rotate: -0.25deg;
+  rotate: none;
 }
 
 .trio h3 {
@@ -572,6 +602,7 @@ h3 {
   .trio {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.4rem;
+    align-items: stretch;
   }
 }
 
@@ -1002,10 +1033,17 @@ h3 {
   .gyre-3d,
   .floater,
   .slot[data-kind="orbit"]::after,
-  .rise {
+  .rise,
+  :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a) {
     animation: none;
     transition: none;
     opacity: 1;
+    transform: none;
+  }
+
+  :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):hover,
+  :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):focus-visible,
+  :is(.btn, .menu-btn, .menu a, .brand, .colophon a, .skip, aside a):active {
     transform: none;
   }
 }
@@ -1181,7 +1219,7 @@ h3 {
 
   .trio article {
     padding: 0.9rem 0.85rem;
-    rotate: 0;
+    rotate: none;
   }
 
   .trio p {
